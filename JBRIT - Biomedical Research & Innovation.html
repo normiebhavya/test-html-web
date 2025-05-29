@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://jamitson.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="icon" type="image/svg+xml" href="https://jamitson.com/favicon.svg">
+        <meta name="generator" content="Hostinger Horizons">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="JBRIT - Jamitson Biomedical Research Institute of Technology. Where Research Meets Healthcare Innovation.">
+        <title>JBRIT - Biomedical Research &amp; Innovation</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./JBRIT - Biomedical Research &amp; Innovation_files/css2" rel="stylesheet">
+        <script type="module" crossorigin="" src="./JBRIT - Biomedical Research &amp; Innovation_files/index-a8f0308b.js.download"></script>
+        <link rel="stylesheet" href="./JBRIT - Biomedical Research &amp; Innovation_files/index-8f912135.css">
+        <script type="module">
+window.onerror = (message, source, lineno, colno, errorObj) => {
+	const errorDetails = errorObj ? JSON.stringify({
+		name: errorObj.name,
+		message: errorObj.message,
+		stack: errorObj.stack,
+		source,
+		lineno,
+		colno,
+	}) : null;
+
+	window.parent.postMessage({
+		type: 'horizons-runtime-error',
+		message,
+		error: errorDetails
+	}, '*');
+};
+</script>
+        <script type="module">
+const observer = new MutationObserver((mutations) => {
+	for (const mutation of mutations) {
+		for (const addedNode of mutation.addedNodes) {
+			if (
+				addedNode.nodeType === Node.ELEMENT_NODE &&
+				(
+					addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
+					addedNode.classList?.contains('backdrop')
+				)
+			) {
+				handleViteOverlay(addedNode);
+			}
+		}
+	}
+});
+
+observer.observe(document.documentElement, {
+	childList: true,
+	subtree: true
+});
+
+function handleViteOverlay(node) {
+	if (!node.shadowRoot) {
+		return;
+	}
+
+	const backdrop = node.shadowRoot.querySelector('.backdrop');
+
+	if (backdrop) {
+		const overlayHtml = backdrop.outerHTML;
+		const parser = new DOMParser();
+		const doc = parser.parseFromString(overlayHtml, 'text/html');
+		const messageBodyElement = doc.querySelector('.message-body');
+		const fileElement = doc.querySelector('.file');
+		const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
+		const fileText = fileElement ? fileElement.textContent.trim() : '';
+		const error = messageText + (fileText ? ' File:' + fileText : '');
+
+		window.parent.postMessage({
+			type: 'horizons-vite-error',
+			error,
+		}, '*');
+	}
+}
+</script>
+        <script type="module">
+const originalConsoleError = console.error;
+console.error = function(...args) {
+	originalConsoleError.apply(console, args);
+
+	let errorString = '';
+
+	for (let i = 0; i < args.length; i++) {
+		const arg = args[i];
+		if (arg instanceof Error) {
+			errorString = arg.stack || `${arg.name}: ${arg.message}`;
+			break;
+		}
+	}
+
+	if (!errorString) {
+		errorString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+	}
+
+	window.parent.postMessage({
+		type: 'horizons-console-error',
+		error: errorString
+	}, '*');
+};
+</script>
+        <script type="module">
+const originalFetch = window.fetch;
+
+window.fetch = function(...args) {
+	const url = args[0] instanceof Request ? args[0].url : args[0];
+
+	// Skip WebSocket URLs
+	if (url.startsWith('ws:') || url.startsWith('wss:')) {
+		return originalFetch.apply(this, args);
+	}
+
+	return originalFetch.apply(this, args)
+		.then(async response => {
+			const contentType = response.headers.get('Content-Type') || '';
+
+			// Exclude HTML document responses
+			const isDocumentResponse =
+				contentType.includes('text/html') ||
+				contentType.includes('application/xhtml+xml');
+
+			if (!response.ok && !isDocumentResponse) {
+					const responseClone = response.clone();
+					const errorFromRes = await responseClone.text();
+					const requestUrl = response.url;
+					console.error(`Fetch error from ${requestUrl}: ${errorFromRes}`);
+			}
+
+			return response;
+		})
+		.catch(error => {
+			if (!url.match(/.html?$/i)) {
+				console.error(error);
+			}
+
+			throw error;
+		});
+};
+</script>
+      </head>
+      <body>
+        <div id="root"><div class="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-sky-100 dark:from-slate-900 dark:to-sky-900 text-slate-800 dark:text-slate-200"><header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"><div class="container flex h-20 max-w-screen-2xl items-center justify-between"><a class="flex items-center space-x-2" href="https://jamitson.com/"><img src="./JBRIT - Biomedical Research &amp; Innovation_files/1ef0cfd784657e1cec890ee94f751c1f.jpg" alt="JAMITSON® Logo" class="h-12 md:h-16 object-contain"><span class="font-bold text-xl md:text-2xl"style="color: red;"></span></a><nav class="hidden md:flex gap-6"><a class="text-sm font-medium transition-colors hover:text-primary text-primary" href="https://jamitson.com/">Home</a><a class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" href="https://jamitson.com/about">About Us</a><a class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" href="https://jamitson.com/research">Research &amp; Innovation</a><a class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" href="https://jamitson.com/programs">Programs &amp; Training</a><a class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" href="https://jamitson.com/collaborations">Collaborations</a><a class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" href="https://jamitson.com/careers">Careers</a><a class="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" href="https://jamitson.com/contact">Contact</a></nav><div class="md:hidden"><button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r0:" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg><span class="sr-only">Toggle Menu</span></button></div></div></header><main class="flex-grow container mx-auto px-4 py-8 md:py-12"><div style="opacity: 1; transform: none;"><div class="space-y-16"><section class="relative py-20 md:py-32 rounded-xl overflow-hidden bg-gradient-to-r from-primary via-sky-500 to-red-600 text-primary-foreground shadow-2xl"><div class="absolute inset-0 bg-black/30 backdrop-blur-sm"></div><div class="container mx-auto text-center relative z-10"><h1 class="text-4xl md:text-6xl font-extrabold mb-6" style="opacity: 1; transform: none;">Where Research Meets Healthcare Innovation.</h1><p class="text-lg md:text-xl mb-2 max-w-3xl mx-auto" style="opacity: 1; transform: none;">JAMITSON® is a next-generation research and innovation hub in biomedical sciences and healthcare technology.</p><div class="my-6" style="opacity: 1; transform: none;"><p class="text-2xl md:text-4xl font-bold uppercase tracking-wider text-sky-200">JAMITSON®</p><p class="text-xl md:text-3xl font-semibold uppercase tracking-wide text-sky-100">BIOMEDICAL RESEARCH INSTITUTE OF TECHNOLOGY</p></div><div class="space-x-4" style="opacity: 1; transform: none;"><a class="inline-flex items-center justify-center text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90 transform hover:scale-105 transition-transform" href="https://jamitson.com/programs">Explore Programs</a><a class="inline-flex items-center justify-center text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border h-11 rounded-md px-8 border-sky-200 text-sky-100 bg-sky-600/30 hover:bg-sky-100 hover:text-primary transform hover:scale-105 transition-transform" href="https://jamitson.com/collaborations">Partner With Us</a></div></div><div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-background to-transparent"></div></section><section id="mission"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary dark:text-sky-400">Our Mission</h2><p class="text-lg text-muted-foreground max-w-2xl mx-auto">To bridge the gap between academia, industry, and real-world healthcare applications by offering advanced research, training, and innovation programs, ultimately becoming a center of excellence in biomedical research and healthtech innovation in India and beyond.</p></div><div class="grid md:grid-cols-2 gap-8 items-center"><div><img class="rounded-lg shadow-xl object-cover w-full h-auto max-h-[400px]" alt="Indian scientists collaborating in a high-tech laboratory" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1631556759511-6ce895fbf0ad"></div><div class="space-y-4"><h3 class="text-2xl font-semibold text-primary">Driving Innovation in Healthcare</h3><p class="text-muted-foreground">JAMITSON® is committed to fostering an environment where groundbreaking ideas flourish. We empower researchers and innovators to tackle complex healthcare challenges through interdisciplinary collaboration and access to state-of-the-art facilities.</p><p class="text-muted-foreground">Our focus extends beyond theoretical research to practical applications that directly impact patient care and public health. We aim to accelerate the translation of scientific discoveries into tangible healthcare solutions.</p><a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 h-10 px-4 py-2 mt-4 bg-gradient-to-r from-primary to-red-600 hover:from-primary/90 hover:to-red-600/90 text-primary-foreground shadow-lg transform hover:scale-105 transition-transform" href="https://jamitson.com/about">Learn More About Us</a></div></div></section><section id="research-areas"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary dark:text-sky-400">Key Research Areas</h2><p class="text-lg text-muted-foreground max-w-2xl mx-auto">We are at the forefront of biomedical research, focusing on areas with high impact potential.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 hover:border-primary/50 transition-all duration-300 flex flex-col items-center text-center" style="opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary mb-4"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path></svg><h3 class="text-xl font-semibold mb-2 text-primary">AI in Healthtech</h3><p class="text-sm text-muted-foreground">Pioneering AI-driven solutions for diagnostics, treatment, and patient care.</p></div><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 hover:border-primary/50 transition-all duration-300 flex flex-col items-center text-center" style="opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary mb-4"><path d="M4.5 3h15"></path><path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"></path><path d="M6 14h12"></path></svg><h3 class="text-xl font-semibold mb-2 text-primary">Biomedical Devices</h3><p class="text-sm text-muted-foreground">Developing cutting-edge medical devices for improved healthcare outcomes.</p></div><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 hover:border-primary/50 transition-all duration-300 flex flex-col items-center text-center" style="opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary mb-4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><h3 class="text-xl font-semibold mb-2 text-primary">Epidemiology</h3><p class="text-sm text-muted-foreground">Investigating disease patterns to inform public health strategies.</p></div><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 hover:border-primary/50 transition-all duration-300 flex flex-col items-center text-center" style="opacity: 1; transform: none;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10 text-primary mb-4"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg><h3 class="text-xl font-semibold mb-2 text-primary">Drug Discovery</h3><p class="text-sm text-muted-foreground">Innovating novel therapeutic agents through advanced research methodologies.</p></div></div></section><section id="partnerships"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary dark:text-sky-400">Our Partnerships</h2><p class="text-lg text-muted-foreground max-w-2xl mx-auto">Collaboration is key to innovation. We work with diverse partners to achieve common goals.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 text-center" style="opacity: 1; transform: none;"><div class="flex justify-center mb-4"><img alt="Indian Hospital building" class="h-12 filter grayscale hover:grayscale-0 transition-all" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1663670748197-252f81c82093"></div><h3 class="text-xl font-semibold mb-2 text-primary">Leading Indian Hospitals</h3><p class="text-sm text-muted-foreground">Collaborating with top Indian hospitals for clinical trials and real-world application of research.</p></div><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 text-center" style="opacity: 1; transform: none;"><div class="flex justify-center mb-4"><img alt="Indian Government emblem" class="h-12 filter grayscale hover:grayscale-0 transition-all" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1692609859915-374fd389a81d"></div><h3 class="text-xl font-semibold mb-2 text-primary">Indian Government Agencies</h3><p class="text-sm text-muted-foreground">Partnering with Indian government bodies to shape healthcare policy and innovation.</p></div><div class="bg-card p-6 rounded-lg shadow-lg border border-border/20 text-center" style="opacity: 1; transform: none;"><div class="flex justify-center mb-4"><img alt="Indian University campus" class="h-12 filter grayscale hover:grayscale-0 transition-all" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1586374131028-038f2661600f"></div><h3 class="text-xl font-semibold mb-2 text-primary">Indian Academic Institutions</h3><p class="text-sm text-muted-foreground">Fostering joint research programs and knowledge exchange with Indian universities.</p></div></div><div class="text-center mt-12"><a class="inline-flex items-center justify-center text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white shadow-lg transform hover:scale-105 transition-all duration-300" href="https://jamitson.com/collaborations">Partner with Us</a></div></section><section id="news-events"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold mb-4 text-secondary dark:text-sky-400">News &amp; Events</h2><p class="text-lg text-muted-foreground max-w-2xl mx-auto">Stay updated with the latest happenings at JAMITSON®.</p></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="flex flex-col space-y-1.5 p-0"><img class="w-full h-48 object-cover" alt="Indian professionals at a medical conference" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1618545474738-07deadbab76d"></div><div class="p-6"><h3 class="font-semibold tracking-tight text-xl mb-2 text-primary">Upcoming Workshop on AI in Diagnostics</h3><p class="text-sm text-muted-foreground mb-4">Join us on 05/06/2025 for an insightful workshop...</p><button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 p-0 text-primary">Read More →</button></div></div><div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="flex flex-col space-y-1.5 p-0"><img class="w-full h-48 object-cover" alt="Indian researcher conducting experiment in a modern laboratory" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1582719201918-f1fa99cc3c1d"></div><div class="p-6"><h3 class="font-semibold tracking-tight text-xl mb-2 text-primary">New Research Grant Awarded</h3><p class="text-sm text-muted-foreground mb-4">JAMITSON® secures funding for groundbreaking study on 12/06/2025...</p><button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 p-0 text-primary">Read More →</button></div></div><div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden hover:shadow-xl transition-shadow duration-300"><div class="flex flex-col space-y-1.5 p-0"><img class="w-full h-48 object-cover" alt="JAMITSON® team receiving an innovation award in India" src="./JBRIT - Biomedical Research &amp; Innovation_files/photo-1550438655-400744b9fefc"></div><div class="p-6"><h3 class="font-semibold tracking-tight text-xl mb-2 text-primary">JAMITSON® Wins Innovation Award</h3><p class="text-sm text-muted-foreground mb-4">Recognized for excellence in biomedical technology on 19/06/2025...</p><button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 p-0 text-primary">Read More →</button></div></div></div></section></div></div></main><footer style="background-color: red;" class="bg-secondary text-secondary-foreground py-12"><div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"><div><p class="font-bold text-xl mb-2">JAMITSON®</p><p class="text-sm text-muted-foreground uppercase tracking-wider font-semibold">BIOMEDICAL RESEARCH INSTITUTE OF TECHNOLOGY</p><p class="text-xs text-muted-foreground/80">Bridging Research and Healthcare Innovation.</p></div><div><p class="font-semibold text-lg mb-2">Quick Links</p><ul class="space-y-1"><li><a class="text-sm hover:text-primary transition-colors text-muted-foreground" href="https://jamitson.com/">Home</a></li><li><a class="text-sm hover:text-primary transition-colors text-muted-foreground" href="https://jamitson.com/about">About Us</a></li><li><a class="text-sm hover:text-primary transition-colors text-muted-foreground" href="https://jamitson.com/research">Research &amp; Innovation</a></li><li><a class="text-sm hover:text-primary transition-colors text-muted-foreground" href="https://jamitson.com/programs">Programs &amp; Training</a></li></ul></div><div><p class="font-semibold text-lg mb-2">Contact Us</p><p class="text-sm text-muted-foreground">Email: jamitson7@gmail.com</p><p class="text-sm text-muted-foreground">Phone: +91 7822882712</p><p class="text-sm text-muted-foreground">Kedar Nagar, VIT Road, Jagatpura, Jaipur, India</p></div></div><div class="mt-8 pt-8 border-t border-muted-foreground/20 text-center text-sm text-muted-foreground"><p>© 2025 JAMITSON®. All rights reserved. Designed with ❤️ by Hostinger Horizons.</p></div></footer><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol></div></div></div>
+        
+      
+    
+  </body></html>
